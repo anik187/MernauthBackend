@@ -13,7 +13,9 @@ import userRoutes from './routes/userRoutes.js';
 connectDB();
 const app = express();
 app.use(cors({
-    origin: process.env.CORS_ORIGIN
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+    optionsSuccessStatus: 200,
 }))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
